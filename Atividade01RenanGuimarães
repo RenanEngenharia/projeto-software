@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Sistema Solar: Uma Ode Cósmica</title>
+    <!-- Configuração de Fonte: Usando uma fonte limpa e moderna para um visual "científico" -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ********************************************************************
+         * ATIVIDADE EXTRA: CENTRALIZAÇÃO E CONTAINER PRINCIPAL 
+         ********************************************************************
+        */
+        body {
+            /* Alterar cor de fundo (Requisito CSS) */
+            background-color: #0d1a26; /* Azul Escuro Cósmico */
+            display: flex;
+            justify-content: center; /* Centralizar o conteúdo horizontalmente (Requisito Extra) */
+            padding: 20px;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #container-principal {
+            /* Centralização do conteúdo (Requisito Extra) */
+            width: 100%;
+            max-width: 900px; /* Comprimento máximo (Requisito Extra) */
+            min-width: 300px; /* Comprimento mínimo (Requisito Extra) */
+            
+            /* Estilos do Container (Requisito Extra) */
+            background-color: #1a2938; /* Um tom um pouco mais claro que o fundo para contraste */
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            
+            /* Primeira Borda Colorida (Requisito CSS) */
+            border: 4px solid #4a90e2; /* Borda Azul Brilhante */
+        }
+        
+        /* ********************************************************************
+         * REFINAMENTO VISUAL (REQUISITO CSS)
+         ********************************************************************
+        */
+        
+        /* Estilo do Título Principal */
+        h1 {
+            font-family: 'Space Mono', monospace;
+            color: #ffcc00; /* Amarelo Estelar */
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+            
+            /* Segunda Borda Colorida (Requisito CSS) */
+            border-bottom: 2px dashed #ff6b6b; /* Borda Vermelha/Laranja */
+            padding-bottom: 10px;
+        }
+
+        /* Estilo do Subtítulo (Nome) */
+        h2 {
+            color: #a0a0a0;
+            text-align: center;
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+        
+        /* Cor dos Textos de Parágrafo (Requisito CSS) */
+        p {
+            color: #e0e0e0; /* Cinza Claro para o corpo do texto */
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* ********************************************************************
+         * REQUISITO IMAGEM PRINCIPAL (ID)
+         ********************************************************************
+        */
+        #imagem-principal {
+            /* Ajuste o tamanho dela no CSS (Requisito Imagem) */
+            display: block;
+            width: 80%;
+            max-width: 600px; 
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+            border: 1px solid #ffcc00;
+        }
+
+        /* ********************************************************************
+         * REQUISITO ÍCONES DO RANKING (CLASSE)
+         ********************************************************************
+        */
+        .icone-planeta {
+            /* Ajuste o tamanho delas usando um mesmo seletor no CSS (Requisito Ícones) */
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 2px #4a90e2); /* Efeito glow sutil */
+        }
+        
+        /* Estilo do Ranking */
+        .ranking-planetas {
+            padding-left: 20px;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        .ranking-planetas li {
+            background-color: #2c4155;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
+            list-style-type: none; /* Remove números padrão para usar o próprio contador de OL */
+            counter-increment: custom-counter;
+        }
+        
+        /* Estilo para a lista de links (UL dentro de LI) */
+        .links-uteis {
+            list-style-type: disc;
+            margin-top: 10px;
+            padding-left: 30px;
+        }
+
+        .links-uteis a {
+            color: #99ff99; /* Verde neon */
+            text-decoration: none;
+        }
+        
+        .links-uteis a:hover {
+            text-decoration: underline;
+        }
+
+        /* ********************************************************************
+         * REQUISITO TABELA (LINHAS ALTERNADAS)
+         ********************************************************************
+        */
+        table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+            font-family: 'Space Mono', monospace;
+            color: #e0e0e0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #3d566e;
+        }
+
+        th {
+            background-color: #4a90e2; /* Azul para o cabeçalho */
+            color: #0d1a26;
+            text-transform: uppercase;
+        }
+
+        /* Configurar o CSS para que as linhas alternem entre duas cores de fundo (Requisito Tabela) */
+        tr:nth-child(even) {
+            background-color: #2c4155; /* Cor A: Azul Marinho Médio */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #1a2938; /* Cor B: Azul Escuro (Mesma cor do container) */
+        }
+        
+        /* Estilo pessoal: Um toque especial para a célula de fato interessante */
+        .destaque {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 
+     ********************************************************************
+     * CONTAINER PRINCIPAL: ENGLOBANDO TODO O CONTEÚDO 
+     ********************************************************************
+    -->
+    <div id="container-principal">
+        
+        <!-- 
+         ********************************************************************
+         * TÍTULO E SUBTÍTULO (REQUISITOS ESSENCIAIS)
+         ********************************************************************
+        -->
+        <h1>O Fascinante Sistema Solar</h1>
+        <h2>Por: Renan Guimarães</h2>
+
+        <!-- 
+         ********************************************************************
+         * PARÁGRAFOS DE DESCRIÇÃO (REQUISITO 100XP)
+         ********************************************************************
+        -->
+        <p>
+            O Sistema Solar é o coração da nossa vizinhança cósmica, um complexo gravitacional onde o Sol, uma estrela de tipo G2 V, domina e orquestra o movimento de oito planetas (incluindo a nossa Terra), cinco planetas anões reconhecidos, e trilhões de corpos menores, como asteroides, cometas e meteoroides. Formado há cerca de 4,6 bilhões de anos a partir do colapso de uma vasta nuvem molecular, ele representa uma demonstração épica das leis da física, da formação planetária à evolução estelar. 
+        </p>
+
+        <p>
+            Minha fascinação reside na incrível diversidade que encontramos, desde os escaldantes planetas rochosos interiores (Mercúrio, Vênus, Terra e Marte) até os gigantes gasosos e gelados exteriores (Júpiter, Saturno, Urano e Netuno). Cada mundo oferece um laboratório natural único para o estudo de geologia, clima e, o mais importante, a potencialidade da vida. É a nossa casa, mas também a fronteira final, inspirando constantemente a ciência e a exploração humana.
+        </p>
+        
+        <!-- 
+         ********************************************************************
+         * IMAGEM PRINCIPAL (REQUISITO 200XP)
+         ********************************************************************
+        -->
+        <img 
+            id="imagem-principal" 
+            src="https://placehold.co/600x350/111827/ffffff/png?text=VIS%C3%83O+ART%C3%8DSTICA+DO+SISTEMA+SOLAR" 
+            alt="Visão artística de todo o sistema solar com o sol ao centro e planetas orbitando em anéis.">
+
+        <hr style="border: 0; border-top: 1px solid #3d566e; margin: 30px 0;">
+
+        <!-- 
+         ********************************************************************
+         * RANKING DOS PLANETAS MAIS FASCINANTES (REQUISITO 150XP + ÍCONES 150XP)
+         ********************************************************************
+        -->
+        <h2>🪐 Ranking Pessoal: Os 5 Planetas Mais Fascinantes</h2>
+        <p>
+            Uma classificação subjetiva baseada na complexidade de suas atmosferas, no potencial de descobertas e em seus anéis/luas.
+        </p>
+
+        <ol class="ranking-planetas">
+            <li>
+                <img class="icone-planeta" src="https://placehold.co/30x30/ffcc00/0d1a26/png?text=J" alt="Ícone de Júpiter">
+                <strong>Júpiter: O Gigante Rei</strong>
+                <p style="margin-top: 5px; color: #b0c4de;">O maior de todos, com sua imponente Grande Mancha Vermelha e um sistema de luas que abriga mundos oceânicos como Europa, com potencial de vida.</p>
+                
+                <!-- 
+                 ********************************************************************
+                 * LISTA DE LINKS (REQUISITO 100XP)
+                 ********************************************************************
+                -->
+                <ul class="links-uteis">
+                    <li><a href="#tabela">Dados de Júpiter na Tabela Abaixo</a></li>
+                    <li><a href="https://pt.wikipedia.org/wiki/Sonda_Juno" target="_blank">Sobre a Sonda Juno (NASA)</a></li>
+                    <li><a href="https://pt.wikipedia.org/wiki/Luas_de_J%C3%BApiter" target="_blank">Explorar as Luas Galilenas</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <img class="icone-planeta" src="https://placehold.co/30x30/ff6b6b/0d1a26/png?text=S" alt="Ícone de Saturno">
+                <strong>Saturno: A Beleza dos Anéis</strong>
+                <p style="margin-top: 5px; color: #b0c4de;">Reconhecido por seu espetacular e complexo sistema de anéis de gelo e rocha. Suas luas, como Titã (com lagos de metano) e Encélado (com gêiseres de água), são alvos primários de pesquisa.</p>
+            </li>
+            
+            <li>
+                <img class="icone-planeta" src="https://placehold.co/30x30/99ff99/0d1a26/png?text=E" alt="Ícone da Terra">
+                <strong>Terra: Nosso Oásis Azul</strong>
+                <p style="margin-top: 5px; color: #b0c4de;">O único planeta conhecido a abrigar vida. Sua geologia dinâmica e a presença abundante de água líquida o tornam incomparável.</p>
+            </li>
+            
+            <li>
+                <img class="icone-planeta" src="https://placehold.co/30x30/a0a0a0/0d1a26/png?text=M" alt="Ícone de Marte">
+                <strong>Marte: O Vizinho Ambicioso</strong>
+                <p style="margin-top: 5px; color: #b0c4de;">O planeta mais explorado em busca de vestígios de vida passada. Lar da maior montanha do Sistema Solar, o Monte Olimpo, e alvo da colonização humana futura.</p>
+            </li>
+            
+            <li>
+                <img class="icone-planeta" src="https://placehold.co/30x30/4a90e2/0d1a26/png?text=U" alt="Ícone de Urano">
+                <strong>Urano: O Gigante Inclinado</strong>
+                <p style="margin-top: 5px; color: #b0c4de;">Um "gigante de gelo" que orbita deitado de lado. Sua atmosfera fria e misteriosa e seu sistema de anéis finos o tornam um enigma intrigante.</p>
+            </li>
+        </ol>
+
+        <!-- 
+         ********************************************************************
+         * ATIVIDADE EXTRA: TABELA DE DADOS
+         ********************************************************************
+        -->
+        <h2 id="tabela">Tabela de Dados Planetários Selecionados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Planeta</th>
+                    <th>Tipo</th>
+                    <th>Distância Média do Sol (UA)</th>
+                    <th>Fato Interessante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mercúrio</td>
+                    <td>Rochoso</td>
+                    <td>0.4 UA</td>
+                    <td>É o que tem maior variação de temperatura (-173°C a 427°C).</td>
+                </tr>
+                <tr>
+                    <td>Vênus</td>
+                    <td>Rochoso</td>
+                    <td>0.7 UA</td>
+                    <td class="destaque">Rotaciona ao contrário de todos os outros planetas.</td>
+                </tr>
+                <tr>
+                    <td>Terra</td>
+                    <td>Rochoso</td>
+                    <td>1.0 UA</td>
+                    <td>Único planeta conhecido a abrigar vida.</td>
+                </tr>
+                <tr>
+                    <td>Marte</td>
+                    <td>Rochoso</td>
+                    <td>1.5 UA</td>
+                    <td>Contém o maior vulcão do Sistema Solar, o Monte Olimpo.</td>
+                </tr>
+                <tr>
+                    <td>Júpiter</td>
+                    <td>Gasoso</td>
+                    <td>5.2 UA</td>
+                    <td>Sua Grande Mancha Vermelha é uma tempestade maior que a Terra.</td>
+                </tr>
+                <tr>
+                    <td>Saturno</td>
+                    <td>Gasoso</td>
+                    <td>9.5 UA</td>
+                    <td>Menos denso que a água; flutuaria em uma banheira gigante.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br>
+        <p style="font-size: 0.9em; text-align: center; color: #666;">
+            A beleza do universo reside nos seus detalhes e nas leis que o governam. Espero que tenha gostado do passeio cósmico!
+        </p>
+
+    </div>
+</body>
+</html>
